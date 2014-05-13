@@ -5,7 +5,7 @@ JavaScript Global Best Practices
 
 One of the major problems when working with JavaScript is Global Pollution. Global scope create many problems like Accidental override issue, possible side effects with other functionality, fear to change team member's code and Global are never garbage-collected but solution also along the way so simply you can do with the help of the following best practices.
 
-###One Global Concept:
+###Namespace Concept:
 
 One global concept is one global variable holds all properties and functions in global scope. It normally attached to Window object but not necessary to refer via window object.
 
@@ -88,7 +88,7 @@ console.log(App.MyProgramming.skills);
 
 ```
 
-Real time example in JQuery using Module revealing Pattern
+Take look following example for Todo demo application in JQuery DOM manipulation with Module revealing Pattern
 
 ```javascript
 
