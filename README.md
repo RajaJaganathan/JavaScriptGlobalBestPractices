@@ -88,6 +88,65 @@ console.log(App.MyProgramming.skills);
 
 ```
 
+Real time example in JQuery using Module revealing Pattern
+
+```javascript
+
+//@author Raja Jaganathan
+
+//Todo Application
+
+var Todo = Todo || (function () {
+
+	var privateVar = "I'm Private Variable";
+	
+	var privateFunc = function(){
+		console.log("I'm private function");
+	}
+	
+	function addTask() {
+		if ($("#txtTask").val().length <= 0)
+			return;
+
+		$("#task-template").tmpl({ task: $("#txtTask").val() }).appendTo(".todoList");
+		$("#txtTask").val("");
+    }
+
+    function init() {
+		$("#addTaskButton").on("click", function () {
+			console.log("addTaskButton clicked");
+		   Todo.addTask();
+		});
+
+		$(document).on("click", ".todoList li", function () {
+
+			$(this).toggleClass("taskCompleted");
+
+			var isTaskCompleted = $(this).hasClass("taskCompleted");
+
+			if (isTaskCompleted)
+				$(this).find(".todoCheckbox").prop("checked", true);
+			else
+				$(this).find(".todoCheckbox").prop("checked", false);
+		});
+	}
+
+    return {
+
+		//Public interface i.e, Accessible from outside
+        init:init,
+		addTask:addTask
+    };
+
+})();
+
+$(function () {
+    Todo.init();
+});
+
+```
+
+
 ###Module Concept:
 
 Another way of restricts the global scope by using modules. Module provide generic piece of functionality which never allow to creating global or namespace instead all the code takes place within a single function that responsible for executing or publishing an interface.
