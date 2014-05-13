@@ -11,29 +11,36 @@ One global concept is one global variable holds all properties and functions in 
 
 One global concept is famous in almost all JavaScript frameworks. Like DOJO use dojo global variable. , JQuery use two global variable $ and jQuery. YUI library use YUI global variable. ExtJS use Ext global variable.
 
+```javascript
 if (typeof MyNamespace === "undefined")
     MyNamespace = {};
 
 MyNamespace.MyModule = function () {
     // Module created do something
 }
+```
 
 Alternatively you can do like
+
+```javascript
 var MyNamespace = MyNamespace || {}; //Short 
 
 MyNamespace.MyModule = function () {
     // Module created do something
 }
+````
 
 But what if want to create namespace look like,
 MyNamespace.MyModule.NestedModule
 
+```javascript
 if (typeof MyNamespace === "undefined")
     MyNamespace = {};
 if (typeof MyNamespace.MyModule === "undefined")
     MyNamespace.MyModule = {};
 if (typeof MyNamespace.MyModule.NestedModule === "undefined")
     MyNamespace.MyModule.NestedModule = {};
+```
          
 Alternatively you can do little better code like below snippets
 var MyNamespace = MyNamespace || {};
