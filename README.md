@@ -226,11 +226,21 @@ In JavaScript you can do without creating even a single global variable. But In 
 ```
 
 Here "use strict" statement absolutely need due to accidently we might have change to declare global variable. Let’s take following scenario.
+```javascript
 var localVar1; //Note here semicolon
     localVar2; //So localVar2 is global variable
+
+```
+
 Sometimes few typo mistakes happened like below statement,
+
+```javascript
+
 var localVar1, //Note here Comma
     localVar2; //Now localVar2 is local variable
+    
+```
+
 If use strict mode it throw error because of variable declared without var statement. To avoid this kind annoying mistake at first place use JavaScript code quality tool like JSLint and JSHint
 
 Inspired: Nicholas C. Zakas
