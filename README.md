@@ -78,7 +78,7 @@ That's it. Hereafter don't worry about nested module creation. But one thing bef
 
 App.namespace("MyProgramming.Heros");
 
-App.MyProgramming.Heros.authors = ["Douglas Crockford", "Nicholas Zakas”];
+App.MyProgramming.Heros.authors = ["Douglas Crockford", "Nicholas Zakas"];
 
 App.MyProgramming.skills = ["Advanced JavaScript", "JQuery", "AngularJS", "BackboneJS", "HTML5", "CSS3"];
 
